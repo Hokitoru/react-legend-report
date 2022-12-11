@@ -7,8 +7,6 @@ const Time = () => {
     dayjs.locale('ru');
     const [time, setTime] = useState(null);
 
-    console.log(time);
-
     const getTime = () => {
         setTime(dayjs().format('HH:mm:ss, dddd, D MMMM'));
     }

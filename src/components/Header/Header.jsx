@@ -7,10 +7,8 @@ const Header = () => {
     return (
         <div className={classes.container}>
             <Time></Time>
-            <div>
-                <h1>Legend Report</h1>
-                <Settings></Settings>
-            </div>
+            <h1>Legend Report</h1>
+            <Settings></Settings>
         </div>
     );
 };

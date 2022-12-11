@@ -1,19 +1,28 @@
 .container{
-  padding: 0 5px;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   width: 100vw;
   box-sizing: border-box;
 
-  div{
-    width: 100%;
+  & > div{
     display: flex;
+    align-items: center;
+    width: 100%;
+  }
 
-    h1{
-      margin: 0;
-      width: 100%;
-      text-align: center;
-    }
+  & > div:first-child{
+    justify-content: flex-start;
+  }
+
+  & > div:last-child{
+    justify-content: flex-end;
+  }
+
+  h1{
+    margin: 0;
+    width: 100%;
+    text-align: center;
   }
 
 
