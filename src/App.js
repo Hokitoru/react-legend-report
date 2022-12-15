@@ -1,18 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import InputUserName from "./components/UI/InputUserName/InputUserName";
-import Button from "./components/UI/Button/Button";
-import Settings from "./components/UI/Settings/Settings";
 import Header from "./components/Header/Header";
 import Auth from "./components/Auth/Auth";
+import {useSelector} from "react-redux";
 
 function App() {
-  return (
-    <div className="App">
-        <Header></Header>
-        <Auth></Auth>
-    </div>
-  );
+    let userName = useSelector(state => state.name);
+
+    return (
+        <div className="App">
+            <Header></Header>
+            {
+                userName === 'noname' ? <Auth></Auth> : ''
+            }
+        </div>
+    );
 }
 
 export default App;

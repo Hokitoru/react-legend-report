@@ -1,14 +1,19 @@
 import React, {useState} from 'react';
-import InputUserName from "../UI/InputUserName/InputUserName";
 import classes from './style.module.scss'
+import {useDispatch} from "react-redux";
+import {changeNameAction} from "../Store/nameReducer";
 
 const Auth = () => {
-    const [userName, setUserName] = useState('');
+    const dispatch = useDispatch();
+
+    const changeName = (name) => {
+        dispatch(changeNameAction(name));
+    }
 
     return (
         <div className={classes.container}>
             <h2>Добрый день, как к вам обращаться?</h2>
-            <InputUserName setUserName={setUserName}/>
+            <input type="text" onChange={event => changeName(event.target.value, event.)}/>
         </div>
     );
 };
